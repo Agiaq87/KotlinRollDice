@@ -2,4 +2,8 @@
     <string name="app_name">DiceRoll</string>
     <string name="roll_dice">Roll Dice</string>
     <string name="rool_wice">Rool Twice</string>
+    <string name="lucky">Are you lucky? Twelve or unlucky</string>
+    <string name="win_message_alert">Congratulation, you won!!!</string>
+    <string name="done">OK</string>
+    <string name="win_title_alert">Congratulation!</string>
 </resources>
