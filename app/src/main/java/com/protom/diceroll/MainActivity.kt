@@ -12,8 +12,6 @@ import androidx.appcompat.app.AlertDialog
 import java.lang.Math.random
 
 class MainActivity : AppCompatActivity() {
-    /*private val diceOne: IntRange = 1..6   // IntRange
-    private val diceTwo: IntRange = 2..12*/
 
     private val dice: Dice = Dice(6)
     private var alert: AlertDialog? = null
@@ -46,10 +44,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun lucky(view: View) {
-        if (dice.roll() + dice.roll() != 12) {
-            Toast.makeText(view.context, "Unlucky throw, try again", Toast.LENGTH_SHORT).show()
-        } else {
-            alert?.show()
+        when (dice.roll() + dice.roll() ) {
+            12 -> alert?.show()
+            10,11 -> Toast.makeText(view.context, "Almost close, try again", Toast.LENGTH_SHORT).show()
+            8,9 -> Toast.makeText(view.context, "You're close to lucky, try again", Toast.LENGTH_SHORT).show()
+            else -> Toast.makeText(view.context, "Unlucky throw, try again", Toast.LENGTH_SHORT).show()
         }
+        /*else {
+            alert?.show()
+        }*/
     }
 }
